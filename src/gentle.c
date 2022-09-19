@@ -11,10 +11,10 @@ int main()
     char testUpperZ = 'Z';
     char testLowerZ = 'z';
 
-    to_uppercase(&testLowerA);
-    to_uppercase(&testLowerZ);
-    to_lowercase(&testUpperA);
-    to_lowercase(&testUpperZ);
+    toUppercase(&testLowerA);
+    toUppercase(&testLowerZ);
+    toLowercase(&testUpperA);
+    toLowercase(&testUpperZ);
 
     printf("testLowerA (should be uppercased): %c\n", testLowerA);
     printf("testLowerZ (should be uppercased): %c\n", testLowerZ);
