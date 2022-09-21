@@ -1,6 +1,6 @@
 #include "word_utils.h"
 
-void firstLetterUppercased(word_arr_ptr word) 
+void firstLetterUppercased(word_arr word) 
 {
     size_t len = strlen(word);
 

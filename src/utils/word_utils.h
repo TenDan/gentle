@@ -4,8 +4,8 @@
 #include <string.h>
 #include "letter_utils.h"
 
-typedef char* word_arr_ptr;
+typedef char* word_arr;
 
-void firstLetterUppercased(word_arr_ptr word);
+void firstLetterUppercased(word_arr word);
 
 #endif
