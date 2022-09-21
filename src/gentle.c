@@ -1,29 +1,22 @@
 #include <stdio.h>
-#include "utils/letter_utils.h"
-#include "utils/word_utils.h"
+#include <string.h>
+#include "utils/sentence_utils.h"
 
-int main()
+int main(int argc, char **argv)
 {
-    // printf("%d %d\n", 'a', 'A');
-    // printf("%d %d\n", 'A' + 32, 'a' - 32);
-    char testUpperA = 'A';
-    char testLowerA = 'a';
-    char testUpperZ = 'Z';
-    char testLowerZ = 'z';
+    if (argc != 2)
+    {
+        fprintf(stderr, "Usage: %s <sentence>\n", argv[0]);
+        return 1;
+    }
 
-    toUppercase(&testLowerA);
-    toUppercase(&testLowerZ);
-    toLowercase(&testUpperA);
-    toLowercase(&testUpperZ);
+    char *exString;
 
-    printf("testLowerA (should be uppercased): %c\n", testLowerA);
-    printf("testLowerZ (should be uppercased): %c\n", testLowerZ);
-    printf("testUpperA (should be lowercased): %c\n", testUpperA);
-    printf("testUpperZ (should be lowercased): %c\n", testUpperZ);
+    size_t sentenceSize = strlen(argv[1]);
 
-    char exampleWord[] = "ExampleWord";
-    firstLetterUppercased(exampleWord);
-    printf("%s\n", exampleWord);
+    exString = strndup(argv[1], sentenceSize);
+
+    gentleSentence(&exString);
 
     return 0;
 }
