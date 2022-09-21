@@ -18,10 +18,13 @@ OBJECTS := $(SOURCES:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
 rm = rm -f
 
 $(BINDIR)/$(TARGET): $(OBJECTS)
-	$(LINKER) $(OBJECTS) $(LFLAGS) -o $@
+	@$(LINKER) $(OBJECTS) $(LFLAGS) -o $@
+	@echo "Built successfully to binary $@"
 
 $(OBJECTS): $(OBJDIR)/%.o : $(SRCDIR)/%.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	@mkdir -p $(@D)
+	@$(CC) $(CFLAGS) -c $< -o $@
+	@echo "Compiled $< successfully to $@"
 
 
 .PHONY: clean
