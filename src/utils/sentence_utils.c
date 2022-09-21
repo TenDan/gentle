@@ -5,7 +5,7 @@ void gentleSentence(sentence_ptr sentence)
 {
     char *found;
     while ((found = strsep(sentence, " ")) != NULL)
-    {
+    {   
         firstLetterUppercased(found);
         printf("%s ", found);
     }
