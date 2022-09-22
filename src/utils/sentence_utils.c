@@ -9,5 +9,6 @@ void gentleSentence(sentence_ptr sentence)
         firstLetterUppercased(found);
         printf("%s ", found);
     }
+    printf("\b");
     printf("\n");
 }
